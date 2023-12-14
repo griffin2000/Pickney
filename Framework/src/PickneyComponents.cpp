@@ -36,24 +36,6 @@ namespace Cj
                     case Type::kEntityName:
                         return EntityName::allocate();
         
-                    case Type::kCharacterDefinition:
-                        return CharacterDefinition::allocate();
-        
-                    case Type::kCharacter:
-                        return Character::allocate();
-        
-                    case Type::kCharacterEffector:
-                        return CharacterEffector::allocate();
-        
-                    case Type::kCharacterState:
-                        return CharacterState::allocate();
-        
-                    case Type::kCharacterEffectorState:
-                        return CharacterEffectorState::allocate();
-        
-                    case Type::kCharacterEffectors:
-                        return CharacterEffectors::allocate();
-        
                     case Type::kHierarchyTree:
                         return HierarchyTree::allocate();
         
@@ -72,12 +54,6 @@ namespace Cj
                 {"mesh", false},
                 {"skeleton", false},
                 {"entityName", false},
-                {"characterDefinition", false},
-                {"character", false},
-                {"characterEffector", false},
-                {"characterState", false},
-                {"characterEffectorState", false},
-                {"characterEffectors", false},
                 {"hierarchyTree", false}
 
             };

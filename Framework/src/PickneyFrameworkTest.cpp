@@ -87,7 +87,7 @@ int main() {
     CjAssert(fooEntId != Cj::Framework::kNullEntityID, "Invalid entity");
 
 	//Cj::Framework::ComponentAllocator<TestThreeNode>* threeNodeDefs = new Cj::Framework::ComponentAllocator<TestThreeNode>(pWorld, "threeNode");
-
+	/*
 
 	auto pCondFromJSON = pWorld->deserialize(readFile("../src/cond.json"));
 
@@ -102,7 +102,6 @@ int main() {
 		},
 		pCondFromJSON);
 
-
 	pWorld->addSystem(
 		[&](const Cj::Framework::Globals& globals, const Cj::Framework::Array<Cj::Framework::EntityID>& entities) {
 			entities.forEach([&](const Cj::Framework::EntityID entID) {
@@ -112,15 +111,9 @@ int main() {
 				});
 		},
 		pCondFromJSON, +1);
-	Cj::Framework::EntityID charEntId = pWorld->createEntity();
-	auto& charDef = pWorld->addComponent<Cj::Framework::Components::CharacterDefinition>(charEntId);
-	charDef.nodesUsed.push("Foo");
-	charDef.nodesUsed.push("Foot");
-	charDef.nodesUsed.push("Toot");
-	auto& charComp = pWorld->addComponent<Cj::Framework::Components::Character>(charEntId);
-	charComp.definition = charEntId;
 
-	
+		*/
+
     vector<Cj::Framework::EntityID> ids;
 	Cj::Framework::EntityID parentEntId = pWorld->createEntity();
     for (size_t i = 0; i < 20; i++) {

@@ -20,15 +20,9 @@ namespace Cj {
 		kMesh = 5,
 		kSkeleton = 6,
 		kEntityName = 7,
-		kCharacterDefinition = 8,
-		kCharacter = 9,
-		kCharacterEffector = 10,
-		kCharacterState = 11,
-		kCharacterEffectorState = 12,
-		kCharacterEffectors = 13,
-		kHierarchyTree = 14,
+		kHierarchyTree = 8,
 
-                kNumNativeComponents = 15,
+                kNumNativeComponents = 9,
                 kInvalid = -1
             };
 
@@ -145,99 +139,6 @@ namespace Cj {
                 }
                 static Type id() {
                     return Type::kEntityName;
-                }
-            };
-            struct CharacterDefinition : public ComponentBase {
-                StringArray nodesUsed;
-                StringArray modelNodeNames;
-                Float3Array bindPosition;
-                QuatArray bindRotation;
-                Float3Array bindScale;
-                IntArray minRotationLimitsActive;
-                IntArray maxRotationLimitsActive;
-                Float3Array minRotationLimits;
-                Float3Array maxRotationLimits;
-
-                static CharacterDefinition* allocate() {
-                    return new CharacterDefinition();
-                }
-                static void destroy(CharacterDefinition* ptr) {
-                    delete ptr;
-                }
-                static Type id() {
-                    return Type::kCharacterDefinition;
-                }
-            };
-            struct Character : public ComponentBase {
-                EntityID definition = kNullEntityID;
-
-                static Character* allocate() {
-                    return new Character();
-                }
-                static void destroy(Character* ptr) {
-                    delete ptr;
-                }
-                static Type id() {
-                    return Type::kCharacter;
-                }
-            };
-            struct CharacterEffector : public ComponentBase {
-                EntityID characterState = kNullEntityID;
-                float pull = 0.0f;
-                float resist = 0.0f;
-                float rotationActive = 0.0f;
-                float translationActive = 0.0f;
-                int hikId;
-
-                static CharacterEffector* allocate() {
-                    return new CharacterEffector();
-                }
-                static void destroy(CharacterEffector* ptr) {
-                    delete ptr;
-                }
-                static Type id() {
-                    return Type::kCharacterEffector;
-                }
-            };
-            struct CharacterState : public ComponentBase {
-                EntityID character = kNullEntityID;
-                EntityIDArray targetEntities;
-
-                static CharacterState* allocate() {
-                    return new CharacterState();
-                }
-                static void destroy(CharacterState* ptr) {
-                    delete ptr;
-                }
-                static Type id() {
-                    return Type::kCharacterState;
-                }
-            };
-            struct CharacterEffectorState : public ComponentBase {
-                float leftHandPullHips = 0.0f;
-                float rightHandPullHips = 0.0f;
-
-                static CharacterEffectorState* allocate() {
-                    return new CharacterEffectorState();
-                }
-                static void destroy(CharacterEffectorState* ptr) {
-                    delete ptr;
-                }
-                static Type id() {
-                    return Type::kCharacterEffectorState;
-                }
-            };
-            struct CharacterEffectors : public ComponentBase {
-                EntityIDMap effectorEntities;
-
-                static CharacterEffectors* allocate() {
-                    return new CharacterEffectors();
-                }
-                static void destroy(CharacterEffectors* ptr) {
-                    delete ptr;
-                }
-                static Type id() {
-                    return Type::kCharacterEffectors;
                 }
             };
             struct HierarchyTree : public ComponentBase {
