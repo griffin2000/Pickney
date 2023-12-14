@@ -1,0 +1,6 @@
+[submodule "Framework/src/third-party/glm"]
+	path = Framework/src/third-party/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "Framework/src/third-party/json"]
+	path = Framework/src/third-party/json
+	url = https://github.com/nlohmann/json.git

@@ -1,0 +1,31 @@
+{
+	"condition": "all",
+	"children": [
+		{
+			"condition": "exists",
+			"component": "threeNode",
+			"negate": true
+		},
+		{
+			"condition": "any",
+			"children": [
+				{
+					"condition": "exists",
+					"component": "box"
+				},
+				{
+					"condition": "exists",
+					"component": "model"
+				},
+				{
+					"condition": "exists",
+					"component": "mesh"
+				},
+				{
+					"condition": "exists",
+					"component": "transform"
+				}
+			]
+		}
+	]
+}

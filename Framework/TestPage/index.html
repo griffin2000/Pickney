@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Pickney test page</title>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  html {
+    
+    overflow: hidden;
+  }
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background:black;
+    color: white;
+    
+  }
+    canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        margin: 0
+    }
+
+  </style>
+</head>
+<body>
+
+    <div id="wrapper">
+      <video id="video" playsinline style="
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        width: auto;
+        height: auto;
+        ">
+      </video>
+      
+        <canvas id="canvas" width="640" height="480">
+        </canvas>
+        <script src="dist/index.js"></script>
+    </div>
+</body>
+
+</body></html>
+

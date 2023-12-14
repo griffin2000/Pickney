@@ -1,0 +1,286 @@
+{
+    "unused": {
+        "properties": [
+
+        ]
+    },
+    "transform": {
+        "properties": [
+            {
+                "name": "translation",
+                "type": "float3"
+            },
+            {
+                "name": "rotation",
+                "type": "quaternion"
+            },
+            {
+                "name": "scale",
+                "type": "float3",
+                "default": "vec3(1,1,1)"
+            }
+        ]
+    },
+    "hierarchy": {
+        "properties": [
+            {
+                "name": "parent",
+                "type": "entityId"
+            },
+            {
+                "name": "isJoint",
+                "type": "bool",
+                "default": "false"
+            }
+        ]
+    },
+    "model": {
+        "properties": [
+            {
+                "name": "uri",
+                "type": "uri"
+            }
+        ]
+    },
+    "box": {
+        "properties": [
+            {
+                "name": "size",
+                "type": "float3",
+                "default":"vec3(1,1,1)"
+            },
+            {
+                "name": "color",
+                "type": "float3",
+                "default":"vec3(1,1,1)"
+            }
+        ]
+    },
+    "mesh": {
+        "properties": [
+            {
+                "name": "geometryUri",
+                "type": "uri"
+            },
+            {
+                "name": "materialUri",
+                "type": "uri"
+            },            
+            {
+                "name": "skeleton",
+                "type": "entityId"
+            },
+            {
+                "name":"bindMatrix",
+                "type": "matrix4"
+            }
+
+        ]
+    },
+    "skeleton":{ 
+        "properties": [
+            {
+                "name": "skinUri",
+                "type": "uri"
+            },
+            {
+                "name": "jointEntities",
+                "type": {
+                    "container":"array",
+                    "elementType":"entityId"
+                }
+            },
+            {
+                "name": "jointNames",
+                "type": {
+                    "container":"array",
+                    "elementType":"string"
+                }
+            },
+            {
+                "name": "inverseBindMatrices",
+                "type": {
+                    "container":"array",
+                    "elementType":"matrix4"
+                }
+            }
+        ]
+    },
+    "entityName": {
+        "properties": [
+            {
+                "name": "name",
+                "type": "name"
+            }
+        ]
+    },
+    "characterDefinition": {
+        
+        "properties": [
+            {
+                "name":"nodesUsed",
+                "type": {
+                    "container":"array",
+                    "elementType":"string"
+                }
+            },
+            {
+                "name":"modelNodeNames",
+                "type": {
+                    "container":"array",
+                    "elementType":"string"
+                }
+            },
+            {
+                "name":"bindPosition",
+                "type": {
+                    "container":"array",
+                    "elementType":"float3"
+                }
+            },
+            {
+                "name":"bindRotation",
+                "type": {
+                    "container":"array",
+                    "elementType":"quat"
+                }
+            },
+            {
+                "name":"bindScale",
+                "type": {
+                    "container":"array",
+                    "elementType":"float3"
+                }
+            },
+            {
+                "name":"minRotationLimitsActive",
+                "type": {
+                    "container":"array",
+                    "elementType":"int"
+                }
+            },
+            {
+                "name":"maxRotationLimitsActive",
+                "type": {
+                    "container":"array",
+                    "elementType":"int"
+                }
+            },
+            {
+                "name":"minRotationLimits",
+                "type": {
+                    "container":"array",
+                    "elementType":"float3"
+                }
+            },
+            {
+                "name":"maxRotationLimits",
+                "type": {
+                    "container":"array",
+                    "elementType":"float3"
+                }
+            }
+
+        ]
+    },
+    "character": {
+        
+        "properties": [
+            {
+                "name":"definition",
+                "type": "entityId"
+            }
+        ]
+    },
+    "characterEffector": {
+        "properties": [
+            {
+                "name":"characterState",
+                "type": "entityId"
+            },
+            {
+                "name":"pull",
+                "type": "float",
+                "default": "0.0f"
+            },
+            {
+                "name":"resist",
+                "type": "float",
+                "default": "0.0f"
+            },
+            {
+                "name":"rotationActive",
+                "type": "float",
+                "default": "0.0f"
+            },
+            {
+                "name":"translationActive",
+                "type": "float",
+                "default": "0.0f"
+            },
+            {
+                "name":"hikId",
+                "type": "int"
+            }
+        ]
+    },
+    "characterState": {
+        
+        "properties": [
+            {
+                "name":"character",
+                "type": "entityId"
+            },
+            {
+                "name":"targetEntities",
+                "type": {
+                    "container":"array",
+                    "elementType":"entityId"
+                }
+            }
+        ]
+    },
+    "characterEffectorState": {
+        
+        "properties": [
+            {
+                "name":"leftHandPullHips",
+                "type": "float",
+                "default": "0.0f"
+            },
+            {
+                "name":"rightHandPullHips",
+                "type": "float",
+                "default": "0.0f"
+            }
+        ]
+    },
+    "characterEffectors": {
+        
+        "properties": [
+            {
+                "name":"effectorEntities",
+                "type": {
+                    "container":"map",
+                    "elementType":"entityId"
+                }
+            }
+        ]
+    },
+    "hierarchyTree": {
+        
+        "properties": [
+            {
+                "name":"parent",
+                "type":"entityId"
+            },
+            {
+                "name":"children",
+                "type": {
+                    "container":"array",
+                    "elementType":"entityId"
+                }
+            }
+        ]
+    }
+}
